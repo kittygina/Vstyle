@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="1dp"
+    android:paddingRight="1dp"
+    android:paddingTop="1dp"
+    android:background="@drawable/wall"
+    tools:context="com.dachutech.vstyle.MainActivity">
+
+    <ImageButton
+        android:id="@+id/archiveButton"
+        android:layout_width="90dip"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:background="#000"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/desc"
+        app:srcCompat="@drawable/archive3"
+        android:layout_below="@+id/galleryButton"
+        android:layout_alignRight="@+id/galleryButton"
+        android:layout_alignEnd="@+id/galleryButton" />
+
+    <ImageButton
+        android:id="@+id/helpButton"
+        android:layout_width="50dip"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/help"
+        android:contentDescription="@string/desc"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/galleryButton"
+        android:layout_alignStart="@+id/galleryButton" />
+
+    <ImageButton
+        android:id="@+id/feedsButton"
+        android:layout_width="50dip"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/feeds"
+        android:contentDescription="@string/desc"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/modelButton"
+        android:layout_alignStart="@+id/modelButton"
+        android:layout_marginLeft="53dp"
+        android:layout_marginStart="53dp" />
+
+    <ImageButton
+        android:id="@+id/galleryButton"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/gallery"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/profileButton"
+        android:contentDescription="@string/desc"
+        android:layout_toStartOf="@+id/profileButton" />
+
+    <ImageButton
+        android:id="@+id/profileButton"
+        android:layout_width="50dip"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/profle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:contentDescription="@string/desc"
+        android:layout_marginEnd="15dp" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="50dip"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:background="#000"
+        android:contentDescription="@string/desc"
+        app:srcCompat="@drawable/home"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/modelButton"
+        android:layout_toStartOf="@+id/modelButton" />
+
+    <ImageButton
+        android:id="@+id/cameraButton"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/camera"
+        android:layout_alignTop="@+id/galleryButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="49dp"
+        android:contentDescription="@string/desc"
+        android:layout_marginStart="49dp" />
+
+
+    <ImageButton
+        android:id="@+id/modelButton"
+        android:layout_width="90dip"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/user"
+        android:contentDescription="@string/desc"
+        android:layout_alignTop="@+id/archiveButton"
+        android:layout_alignRight="@+id/cameraButton"
+        android:layout_alignEnd="@+id/cameraButton" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="600dip"
+        android:layout_height="201dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/desc"
+        app:srcCompat="@drawable/header" />
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Vstyle</string>
+    <string name="desc">Vstylist</string>
+    <string name="camera">Open Camera</string>
+    <string name="choose_image">Photo Album</string>
+    <string name="choose_button">Select From Gallery</string>
+</resources>
