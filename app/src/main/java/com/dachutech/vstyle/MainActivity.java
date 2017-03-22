@@ -1,6 +1,9 @@
 package com.dachutech.vstyle;
 
+import com.google.android.gms.vision.face.FaceDetector;
+
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +24,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        FaceDetector faceDetector = new
+                FaceDetector.Builder(getApplicationContext()).setTrackingEnabled(false)
+                .build();
+        if(!faceDetector.isOperational()){
+            new AlertDialog.Builder(this).setMessage("Could not set up the face detector!").show();
+            return;
+        }
 
 
         ImageButton myImageButton = (ImageButton) findViewById(R.id.cameraButton);
