@@ -24,7 +24,7 @@ public class DesignActivity2 extends AppCompatActivity {
         btn_cam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), CameraActivity.class);
+                Intent intent = new Intent(getApplication(), Camera2Activity.class);
                 startActivity(intent);
 
             }
