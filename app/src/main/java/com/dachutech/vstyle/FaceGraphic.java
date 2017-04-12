@@ -15,9 +15,6 @@
  */
 package com.dachutech.vstyle;
 
-import com.google.android.gms.vision.face.Face;
-import com.google.android.gms.vision.face.Landmark;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -25,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.dachutech.vstyle.ui.camera.GraphicOverlay;
+import com.google.android.gms.vision.face.Face;
 
 /**
  * Graphic instance for rendering face position, orientation, and landmarks within an associated
@@ -47,7 +45,7 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
     };
     private static int mCurrentColorIndex = 0;
     private Bitmap filterBitmap;
-    private Bitmap flowers;
+    private Bitmap hairclip;
     private Paint mFacePositionPaint;
     private Paint mIdPaint;
     private Paint mBoxPaint;
@@ -74,8 +72,8 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
         mBoxPaint.setStyle(Paint.Style.STROKE);
         mBoxPaint.setStrokeWidth(BOX_STROKE_WIDTH);
 
-        filterBitmap = BitmapFactory.decodeResource(getOverlay().getContext().getResources(), R.drawable.flowers);
-        flowers = filterBitmap;
+        filterBitmap = BitmapFactory.decodeResource(getOverlay().getContext().getResources(), R.drawable.hairclip);
+        hairclip = filterBitmap;
     }
 
     void setId(int id) {
@@ -89,7 +87,7 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
      */
     void updateFace(Face face) {
         mFace = face;
-        flowers = Bitmap.createScaledBitmap(filterBitmap, (int) scaleX(face.getWidth()), (int) scaleY(face.getHeight()), true);
+        hairclip = Bitmap.createScaledBitmap(filterBitmap, (int) scaleX(face.getWidth()), (int) scaleY(face.getHeight()), true);
 
         postInvalidate();
     }
@@ -114,8 +112,8 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
         float top = y - yOffset;
         float right = x + xOffset;
         float bottom = y + yOffset;
-        float foreheadY = top - flowers.getHeight() / 2.5f;
+        float foreheadY = top - hairclip.getHeight() / 2.5f;
 
-        canvas.drawBitmap(flowers, left, foreheadY, new Paint());
+        canvas.drawBitmap(hairclip, left, foreheadY, new Paint());
     }
 }

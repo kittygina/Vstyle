@@ -8,8 +8,6 @@
     <uses-feature android:name="android.hardware.camera2" />
     <uses-feature android:name="android.hardware.camera2.autofocus" />
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,8 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
-                android:name="com.google.android.gms.vision.DEPENDENCIES"
-                android:value="face" />
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="face" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +38,9 @@
         <activity android:name=".Camera2Activity" />
         <activity android:name=".GalleryActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".HelpActivity"></activity>
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".ModelActivity"></activity>
     </application>
 
 </manifest>

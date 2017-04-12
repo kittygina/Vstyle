@@ -1,18 +1,13 @@
 package com.dachutech.vstyle;
 
-import com.google.android.gms.vision.face.FaceDetector;
-
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-
-import java.io.IOException;
+import com.google.android.gms.vision.face.FaceDetector;
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseHelper dbAccessor;
@@ -33,14 +28,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        ImageButton myImageButton = (ImageButton) findViewById(R.id.cameraButton);
-        ImageButton myImageButton1 = (ImageButton) findViewById(R.id.galleryButton);
-        ImageButton myImageButton2 = (ImageButton) findViewById(R.id.profileButton);
-        ImageButton myImageButton3 = (ImageButton) findViewById(R.id.helpButton);
-        ImageButton myImageButton4 = (ImageButton) findViewById(R.id.homeButton);
+        ImageButton CameraImageButton =  (ImageButton) findViewById(R.id.cameraButton);
+        ImageButton GalleryImageButton = (ImageButton) findViewById(R.id.galleryButton);
+        ImageButton ModelImageButton = (ImageButton) findViewById(R.id.modelButton);
+        ImageButton ProfileImageButton = (ImageButton) findViewById(R.id.profileButton);
+        ImageButton HelpImageButton = (ImageButton) findViewById(R.id.helpButton);
+        ImageButton HomeImageButton = (ImageButton) findViewById(R.id.homeButton);
 
 
-        myImageButton.setOnClickListener(new View.OnClickListener()
+        CameraImageButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -51,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
-        myImageButton2.setOnClickListener(new View.OnClickListener()
+        ProfileImageButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -62,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
-        myImageButton3.setOnClickListener(new View.OnClickListener()
+        HelpImageButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -73,7 +69,18 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
-        myImageButton4.setOnClickListener(new View.OnClickListener()
+        ModelImageButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent (MainActivity.this, ModelActivity.class);
+                startActivity(intent);
+
+            }
+        } );
+
+        HomeImageButton .setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -84,13 +91,15 @@ public class MainActivity extends AppCompatActivity {
             }
         } );
 
-        myImageButton1.setOnClickListener((new View.OnClickListener()
+        GalleryImageButton.setOnClickListener((new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 Intent intent1= new Intent (MainActivity.this, GalleryActivity.class);
                 startActivity(intent1);
+
+
                 //To change body of implemented methods use File | Settings | File Templates.
             }
         }));

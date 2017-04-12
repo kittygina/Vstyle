@@ -1,14 +1,6 @@
 package com.dachutech.vstyle;
 
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.vision.CameraSource;
-import com.google.android.gms.vision.MultiProcessor;
-import com.google.android.gms.vision.Tracker;
-import com.google.android.gms.vision.face.Face;
-import com.google.android.gms.vision.face.FaceDetector;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
@@ -20,19 +12,21 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.SurfaceHolder;
 import android.view.View;
 
 import com.dachutech.vstyle.ui.camera.CameraSourcePreview;
 import com.dachutech.vstyle.ui.camera.GraphicOverlay;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.MultiProcessor;
+import com.google.android.gms.vision.Tracker;
+import com.google.android.gms.vision.face.Face;
+import com.google.android.gms.vision.face.FaceDetector;
 
 import java.io.IOException;
 
-/**
- * Vstyle
- * Michael Obi
- * 02 04 2017 8:42 AM
- */
+
 
 public class Camera2Activity extends AppCompatActivity {
     private static final String TAG = "FaceTracker";

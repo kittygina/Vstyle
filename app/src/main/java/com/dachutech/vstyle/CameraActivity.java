@@ -1,30 +1,14 @@
 package com.dachutech.vstyle;
 
-import android.content.Intent;
 import android.hardware.Camera;
-import android.net.Uri;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Surface;
+import android.support.v7.app.AppCompatActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
-import android.widget.Toast;
 
 import com.melnykov.fab.FloatingActionButton;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import butterknife.ButterKnife;
 import butterknife.InjectView;
-
-import static android.R.attr.data;
 
 public class CameraActivity extends AppCompatActivity {
     Camera camera;
@@ -76,7 +60,7 @@ public class CameraActivity extends AppCompatActivity {
                 }catch (IOException ex){
                 }finally{
 
-                }
+                }p0
                 Toast.makeText(getApplicationContext(), "Picture Saved", Toast.LENGTH_SHORT).show();
                 refreshCamera();
                 refreshGallery(picfile);
