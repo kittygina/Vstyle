@@ -15,6 +15,8 @@
  */
 package com.dachutech.vstyle;
 
+import com.google.android.gms.vision.face.Face;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -22,7 +24,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.dachutech.vstyle.ui.camera.GraphicOverlay;
-import com.google.android.gms.vision.face.Face;
 
 /**
  * Graphic instance for rendering face position, orientation, and landmarks within an associated
@@ -72,7 +73,7 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
         mBoxPaint.setStyle(Paint.Style.STROKE);
         mBoxPaint.setStrokeWidth(BOX_STROKE_WIDTH);
 
-        filterBitmap = BitmapFactory.decodeResource(getOverlay().getContext().getResources(), R.drawable.hairclip);
+        filterBitmap = BitmapFactory.decodeResource(getOverlay().getContext().getResources(), R.drawable.hair_2);
         hairclip = filterBitmap;
     }
 
@@ -87,7 +88,7 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
      */
     void updateFace(Face face) {
         mFace = face;
-        hairclip = Bitmap.createScaledBitmap(filterBitmap, (int) scaleX(face.getWidth()), (int) scaleY(face.getHeight()), true);
+        hairclip = Bitmap.createScaledBitmap(filterBitmap, (int) scaleX(face.getWidth() + (face.getWidth() * 0.5f)), (int) scaleY(face.getHeight() + (face.getWidth() * 0.5f)), true);
 
         postInvalidate();
     }
@@ -106,14 +107,14 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
         float x = translateX(face.getPosition().x + face.getWidth() / 2);
         float y = translateY(face.getPosition().y + face.getHeight() / 2);
 
-        float xOffset = scaleX(face.getWidth() / 2.0f);
+        float xOffset = scaleX(face.getWidth() / 1.0f);
         float yOffset = scaleY(face.getHeight() / 2.0f);
-        float left = x - xOffset;
+        float left = x - (xOffset / 2) - (face.getWidth() * 0.5f);
         float top = y - yOffset;
         float right = x + xOffset;
         float bottom = y + yOffset;
-        float foreheadY = top - hairclip.getHeight() / 2.5f;
+//        float foreheadY = top ;
 
-        canvas.drawBitmap(hairclip, left, foreheadY, new Paint());
+        canvas.drawBitmap(hairclip, left, top, new Paint());
     }
 }
