@@ -1,9 +1,5 @@
 package com.dachutech.vstyle;
 
-import com.google.android.gms.vision.Frame;
-import com.google.android.gms.vision.face.Face;
-import com.google.android.gms.vision.face.FaceDetector;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -26,6 +22,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.android.gms.vision.Frame;
+import com.google.android.gms.vision.face.Face;
+import com.google.android.gms.vision.face.FaceDetector;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -118,7 +118,7 @@ public class GalleryActivity extends AppCompatActivity {
 
         Bitmap tempBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.RGB_565);
         Canvas tempCanvas = new Canvas(tempBitmap);
-        tempCanvas.drawBitmap(bitmap, 0, 0, null);
+        tempCanvas.drawBitmap(bitmap, 0, 0, null); 
 
         FaceDetector faceDetector = new
                 FaceDetector.Builder(getApplicationContext()).setTrackingEnabled(false)

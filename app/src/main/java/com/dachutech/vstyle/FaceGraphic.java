@@ -15,8 +15,6 @@
  */
 package com.dachutech.vstyle;
 
-import com.google.android.gms.vision.face.Face;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -24,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.dachutech.vstyle.ui.camera.GraphicOverlay;
+import com.google.android.gms.vision.face.Face;
 
 /**
  * Graphic instance for rendering face position, orientation, and landmarks within an associated

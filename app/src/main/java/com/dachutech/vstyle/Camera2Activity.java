@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -23,14 +24,17 @@ import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.Tracker;
 import com.google.android.gms.vision.face.Face;
 import com.google.android.gms.vision.face.FaceDetector;
+import com.melnykov.fab.FloatingActionButton;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-
+import java.util.Date;
 
 
 public class Camera2Activity extends AppCompatActivity {
     private static final String TAG = "FaceTracker";
-
+    FloatingActionButton saveButton;
     private CameraSource mCameraSource = null;
 
     private CameraSourcePreview mPreview;
@@ -63,6 +67,37 @@ public class Camera2Activity extends AppCompatActivity {
         } else {
             requestCameraPermission();
         }
+        saveButton = (FloatingActionButton)findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCameraSource.takePicture(null, new CameraSource.PictureCallback() {
+
+                    @Override
+                    public void onPictureTaken(byte[] bytes) {
+                        try {
+                            File basePath = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "vstyle");
+                            if (!basePath.exists()) {
+                                Log.d("CAPTURE_BASE_PATH", basePath.mkdirs() ? "Success": "Failed");
+                            }
+                            File captureFile = new File( basePath + "photo_" + (new Date().getTime()) + ".jpg");
+                            if (!captureFile.exists())
+                                Log.d("CAPTURE_FILE_PATH", captureFile.createNewFile() ? "Success": "Failed");
+                            FileOutputStream stream = new FileOutputStream(captureFile);
+                            stream.write(bytes);
+                            stream.flush();
+                            stream.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                });
+
+            }
+
+        });
     }
 
     /**

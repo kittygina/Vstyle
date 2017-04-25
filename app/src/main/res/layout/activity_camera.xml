@@ -2,22 +2,31 @@
 
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/topLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/topLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:keepScreenOn="true">
+        android:keepScreenOn="true"
+    android:weightSum="1">
 
     <com.dachutech.vstyle.ui.camera.CameraSourcePreview
             android:id="@+id/preview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="510dp">
 
         <com.dachutech.vstyle.ui.camera.GraphicOverlay
                 android:id="@+id/faceOverlay"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="439dp"/>
 
     </com.dachutech.vstyle.ui.camera.CameraSourcePreview>
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/saveButton"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:src="@drawable/camicon" />
 
 </LinearLayout>
